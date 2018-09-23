@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     echo "Asia/Shanghai" > /etc/timezone
 
 RUN mkdir /var/run/sshd
-RUN echo 'root:QWER654321' |chpasswd
+RUN echo 'root:sLfrk=A?eTyD!wk&fb' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/^#?Port 22/Port 10000/g' /etc/ssh/sshd_config
