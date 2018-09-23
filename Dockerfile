@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER ChennHaoo <SSR SSPanel-V3-Mod>
+MAINTAINER ChennHaoo <Nobody>
 
 RUN apt-get update -y && \
     apt-get install -y openssh-server nano cron git && \
@@ -9,10 +9,10 @@ RUN apt-get update -y && \
     echo "Asia/Shanghai" > /etc/timezone
 
 RUN mkdir /var/run/sshd
-RUN echo 'root:sLfrk=A?eTyD!wk&fb' |chpasswd
+RUN echo 'root:root' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#?Port 22/Port 10000/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^#?Port 22/Port 22/g' /etc/ssh/sshd_config
 
 RUN mkdir /root/.ssh
 
