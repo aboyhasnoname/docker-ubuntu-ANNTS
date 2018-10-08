@@ -3,11 +3,15 @@ FROM ubuntu:16.04
 MAINTAINER ChennHaoo <SSR SSPanel-V3-Mod>
 
 RUN apt-get update -y && \
-	apt-get install -y supervisor && \
-	apt-get install -y openssh-server nano cron git && \
-	apt-get install -y tzdata && \
-	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-	echo "Asia/Shanghai" > /etc/timezone
+    apt-get install -y supervisor && \
+    apt-get install -y openssh-server && \
+    apt-get install -y nano && \
+    apt-get install -y tzdata && \
+    apt-get install -y cron && \
+    apt-get install -y git && \
+    apt-get autoclean && apt-get autoremove && \
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:QWER654321' |chpasswd
