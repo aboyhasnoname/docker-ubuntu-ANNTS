@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER ChennHaoo <SSR SSPanel-V3-Mod>
+MAINTAINER A Girl has no name <a nobody>
 
 RUN apt-get update -y && \
     apt-get install -y supervisor && \
